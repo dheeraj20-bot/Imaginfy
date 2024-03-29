@@ -1,7 +1,7 @@
 import mongoose,{Mongoose} from 'mongoose'
 
 const MONGODB_URl = process.env.MONGODB_URL;
-console.log(MONGODB_URl);
+// console.log(MONGODB_URl);
 
 
 interface MongooseConnection {
@@ -17,16 +17,13 @@ if(!cached){
     }
 }
 
-
 export const connectToDatabase = async ()=>{
     if(cached.conn) return cached.conn;
-    if(!MONGODB_URl) throw new Error("Missing MongoDburl ")
+    if(!MONGODB_URl) throw new Error('Missing MONGODB_URL')
 
-    cached.promise = 
-    cached.promise || 
-    mongoose.connect(MONGODB_URl,{
+    cached.promise = cached.promise || mongoose.connect(MONGODB_URl,{
         dbName:"sora",bufferCommands:false})
-
+    
     cached.conn = await cached.promise;
 
     return cached.conn;

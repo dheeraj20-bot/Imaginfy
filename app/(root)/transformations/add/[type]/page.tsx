@@ -8,9 +8,9 @@ import { redirect } from 'next/navigation';
 
 const AddTransformationsTypePage = async ({params:{type}}:SearchParamProps) => {
  
-   const {userId} = auth();
-   console.log(userId);
-   
+   const { userId } = auth();
+  //  console.log("User id ",userId);
+  // console.log(typeof userId);
   const transformation = transformationTypes[type];
 
   if(!userId) redirect('/sign-in')
@@ -22,11 +22,17 @@ const AddTransformationsTypePage = async ({params:{type}}:SearchParamProps) => {
     <Header 
     title={transformation.title} 
     subtitle={transformation.subTitle}/>
-    <TransformationForm action='Add'
+
+    <section className='mt-10'>
+    <TransformationForm 
+    action='Add'
     userId={user._id}
     type={transformation.type as TransformationTypeKey}
     creditBalance={user.creditBalance}
     />
+    </section>
+
+   
    </>
    )
 }

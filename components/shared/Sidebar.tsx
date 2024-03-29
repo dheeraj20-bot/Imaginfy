@@ -16,8 +16,10 @@ const Sidebar = () => {
             <Image src="/assets/images/logo-text.svg" alt='logo' width={180}
               height={28}/>
            </Link>
+           
            <nav className='sidebar-nav'>
             <SignedIn>
+
                <ul className='sidebar-nav_elements'>
                     {navLinks.slice(0,6).map((link)=>{
                       const isActive = link.route ===pathname 
@@ -48,10 +50,12 @@ const Sidebar = () => {
                         </li>
                       )
                     })}
+                    
                     <li className='flex-center cursor-pointer gap-2 p-4'>
                         <UserButton afterSignOutUrl='/' showName/>
                     </li>
                </ul>
+
             </SignedIn>
 
             <SignedOut>
@@ -63,6 +67,7 @@ const Sidebar = () => {
             </SignedOut>
            </nav>
         </div>
+                    
     </aside>
   )
 }

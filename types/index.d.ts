@@ -9,6 +9,8 @@ declare type CreateUserParams = {
     lastName: string;
     photo: string;
   };
+
+
   
   declare type UpdateUserParams = {
     firstName: string;

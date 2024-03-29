@@ -11,7 +11,7 @@ const IBMPlex = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Sora",
+  title: "Buzzler",
   description: "Ai-Powered image generation",
 };
 
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider appearance={{
-      variables:{colorPrimary:'#624cf5'}
+      variables:{colorPrimary:'#912381'}
     }}>
        <html lang="en">
       <body className={cn("font-IBMPlex antialiased",IBMPlex.variable)}>
@@ -30,6 +30,5 @@ export default function RootLayout({
         </body>
     </html>
     </ClerkProvider>
-    
   );
 }
